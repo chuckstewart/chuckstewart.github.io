@@ -1,0 +1,89 @@
+<body data-spy="scroll" data-target=".navbar-fixed-top">
+  <nav onload = "startTimer()" class="navbar navbar1 nav navbar-default navbar-fixed-top " role="navigation">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="icon-bar" ></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img src="../images/nyt.png" class="img-fluid navbar-brand" alt="Responsive image">    
+      </div>    
+      <div class="collapse navbar-collapse navbar-ex1-collapse" id="">            
+        <ul  class="nav navbar-nav navbar-right">
+           <li ng-repeat="section in sections"><a class="page-scroll" href="{{section.linkname}}"  du-smooth-scroll du-scrollspy>{{section.sectionname}} </a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <nav onload = "startTimer()" class="navbar mobilenav nav navbar-default navbar-fixed-top " role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+         <span class="icon-bar" ></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+        </button>
+    <img src="../images/nyt.png" class="img-fluid navbar-brand" alt="Responsive image">  
+    <div class="collapse navbar-collapse navbar-ex1-collapse" id="bs-example-navbar-collapse-1">
+      <ul  class="nav navbar-nav navbar-right">
+        <li ng-repeat="section in sections">
+          <a class="page-scroll" href="{{section.linkname}}"  du-smooth-scroll du-scrollspy>{{section.sectionname}}</a>
+        </li>
+      </ul>    
+    </div><!-- /.navbar-collapse -->
+    <!-- /.container-fluid -->
+  </nav>
+            
+  <section id = "homeheader">
+    <img src="../images/nytlogo.png" class="img-fluid centerhigh" alt="Responsive image">
+    <p class="date">{{todaydate}}</p>
+    <carousel3d ng-model="slides" options="options">
+          <carousel3d-slide ng-repeat="part in parts | limitTo:5">
+              <figure>
+                  <img ng-src="{{part.slides[0]}}" alt=""/>
+                  <a class="page-scroll" href="{{part.linkname}}" du-smooth-scroll du-scrollspy><figcaption ng-bind="part.title"></figcaption></a>
+              </figure>
+          </carousel3d-slide>
+    </carousel3d>
+
+    <a class="page-scroll" href="#politics" du-smooth-scroll du-scrollspy> <i class="fa fa-angle-double-down animated"></i></a>
+  </section>
+ 
+  <section  ng-repeat="part in parts" id="{{part.sectiontitle}}" class="topspace"  >
+    <h1 class="main-title">{{part.title}}</h1>
+    <p class="main-author">BY {{part.author}}</p>
+    <div  class="story-content">
+      <div class="left">
+        <div  ng-repeat="image in part.slides">
+          <img ng-if="part.slides.length == 3" ng-show="$index == counter" ng-src="{{image}}" class="img-fluid main-pic" alt="Cinque Terre" width="" height="">
+          <img ng-if="part.slides.length == 2" ng-show="$index == counter2" ng-src="{{image}}" class="img-fluid main-pic" alt="Cinque Terre" width="" height="">
+          <img ng-if="part.slides.length == 1" ng-src="{{image}}" class="img-fluid main-pic" alt="Cinque Terre" width="" height="">
+        </div>
+        <h6 class="description">{{picdescrip}}</h6>   
+        <div class="sociallinks">
+          <i class="fa fa-2x fa-facebook" aria-hidden="true"></i>
+          <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
+          <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+        </div>
+      </div>
+      <div class="right">
+        <p class="main-article"> 
+        {{part.article}}
+        </p>
+      </div>   
+
+      <div class="optional" ng-if="part.show">
+        <button class="sectionbutton" ng-click="showArticles(part)">more in {{part.sectiontitle}}<br><i class="fa fa-angle-down" aria-hidden="true"></i></button>
+      </div>
+      <div class="articlelist" ng-hide="part.show" >
+        <a ng-repeat="article in part.articles" href="#ho">{{article}}</a>
+      </div>
+  </section> 
+</body>
+
+
+
