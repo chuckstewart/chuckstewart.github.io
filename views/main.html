@@ -59,9 +59,9 @@
     <div  class="story-content">
       <div class="left">
         <div  ng-repeat="image in part.slides">
-          <img ng-if="part.slides.length == 3" ng-show="$index == counter" ng-src="{{image}}" class="img-fluid main-pic" alt="Cinque Terre" width="" height="">
-          <img ng-if="part.slides.length == 2" ng-show="$index == counter2" ng-src="{{image}}" class="img-fluid main-pic" alt="Cinque Terre" width="" height="">
-          <img ng-if="part.slides.length == 1" ng-src="{{image}}" class="img-fluid main-pic" alt="Cinque Terre" width="" height="">
+          <img ng-if="part.slides.length == 3" ng-show="$index == counter" ng-src="{{image}}" class=" main-pic" alt="Cinque Terre" width="" height="">
+          <img ng-if="part.slides.length == 2" ng-show="$index == counter2" ng-src="{{image}}" class=" main-pic" alt="Cinque Terre" width="" height="">
+          <img ng-if="part.slides.length == 1" ng-src="{{image}}" class="main-pic" alt="Cinque Terre" width="" height="">
         </div>
         <h6 class="description">{{picdescrip}}</h6>   
         <div class="sociallinks">
@@ -80,7 +80,7 @@
         <button class="sectionbutton" ng-click="showArticles(part)">more in {{part.sectiontitle}}<br><i class="fa fa-angle-down" aria-hidden="true"></i></button>
       </div>
       <div class="articlelist" ng-hide="part.show" >
-        <a ng-repeat="article in part.articles" href="#ho">{{article}}</a>
+        <a ng-repeat="article in part.articles" href="">{{article}}</a>
       </div>
   </section> 
 </body>
