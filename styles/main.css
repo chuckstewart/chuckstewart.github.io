@@ -388,11 +388,14 @@ div.scrollmenu a {
       display:block !important;
   }
 }
+
+
 @media(min-width:767px) {
   .carousel-3d-container{
     margin-top: 4%;
     margin-bottom: 3%;
   }
+  
   .description{
   text-align: left;
   width:100%;
@@ -435,18 +438,11 @@ section{
   margin-right:5px;
   margin-top:30px;
   float:left;
- 
+ max-height:350px;
 }
-    .navbar {
-        padding: 20px 0;
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        transition: background .5s ease-in-out,padding .5s ease-in-out;
-    }
+    
 
-    .top-nav-collapse {
-        padding: 0;
-    }
+   
 }
 
 @media(min-width:1030px) {
@@ -456,8 +452,16 @@ section{
   #homeheader {
    height:100vh;
   }
-  .mobilenav{
+  .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+     .top-nav-collapse {
+        padding: 0;
+    }
+.mobilenav{
     display:none;
   }
-
 }
